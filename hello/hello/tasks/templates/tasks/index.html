@@ -1,0 +1,12 @@
+{%extends "tasks/layout.html"%}
+
+{%block body%}
+    <ul>
+        {%for tarea in tasks%}
+            <li>tarea: {{tarea}}</li>
+            {%empty%}
+            <li>no ha tareas</li>
+        {%endfor%}
+    </ul> 
+    <a href="{% url 'tasks:add' %}">agregar nueva tarea</a>
+{%endblock%}
