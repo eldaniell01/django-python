@@ -1,0 +1,13 @@
+{%extends 'vuelos/layout.html'%}
+
+{%block body%}
+    <h1>vuelos</h1>
+    <ul>
+        {%for vuelo in vuelos%}
+            <li>{{vuelo.id}}: de {{vuelo.origin}} a {{vuelo.destination}}</li>
+            {%empty%}
+            <li>no hay vuelos</li>
+        {%endfor%}
+    </ul>
+{%endblock%}
+
