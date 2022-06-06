@@ -1,0 +1,19 @@
+{%extends 'vuelos/layout.html'%}
+
+{%block body%}
+    <h1>Vuelo: {{vuelo.id}}</h1>
+    <ul>
+        <li>origen: {{vuelo.origin}}</li>
+        <li>destino: {{vuelo.destination}}</li>
+        <li>duracion: {{vuelo.duration}}</li>
+    </ul>
+    <h1>pasajeros</h1>
+    <ul>
+        {%for pasa in pasajero%}
+            <li>{{pasa}}</li>
+            {%empty%}
+                <li>no hay pasajeros</li>
+        {%endfor%}
+    </ul>
+    <a href="{%url 'index'%}">regresar</a>
+{%endblock%}

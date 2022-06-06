@@ -15,3 +15,13 @@ class Vuelos(models.Model):
     
     def __str__(self):
         return f"{self.id}:{self.origin} to {self.destination}"
+    
+class Pasajero(models.Model):
+    first = models.CharField(max_length=64)
+    last = models.CharField(max_length=64)
+    edad = models.IntegerField()
+    vuelos = models.ManyToManyField(Vuelos, blank=True, related_name="pasajero")
+    
+    def __str__(self):
+        return f"{self.first} {self.last}"
+    

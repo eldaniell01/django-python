@@ -4,7 +4,11 @@
     <h1>vuelos</h1>
     <ul>
         {%for vuelo in vuelos%}
-            <li>{{vuelo.id}}: de {{vuelo.origin}} a {{vuelo.destination}}</li>
+            <li>
+                <a href="{%url 'vuelo' vuelo.id%}">
+                    {{vuelo.id}}: de {{vuelo.origin}} a {{vuelo.destination}}
+                </a>
+            </li>
             {%empty%}
             <li>no hay vuelos</li>
         {%endfor%}
