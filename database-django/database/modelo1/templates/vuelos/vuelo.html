@@ -15,5 +15,15 @@
                 <li>no hay pasajeros</li>
         {%endfor%}
     </ul>
+    <h1>agregar pasajero</h1>
+    <form action="{%url 'book' vuelo.id %}" method="post">
+        {%csrf_token%}
+        <select name="pasajero" id="">
+            {%for pasajero in no_pasajero%}
+                <option value="{{pasajero.id}}">{{pasajero}}</option>
+            {%endfor%}
+        </select>
+        <input type="submit" value="Guardar">
+    </form>
     <a href="{%url 'index'%}">regresar</a>
 {%endblock%}
